@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CosmicMan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CosmicMan</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <script src="https://kit.fontawesome.com/ec39017701.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .image-group {
+      display: flex;
+      justify-content: space-between;  
+    }
+    .image-group img {
+      flex: 1;
+    }
+    .image-group {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="loading">
+    <div class="loader"></div>
+    <!-- <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." /> -->
+  </div>
+
+
+
+  <!-- <script> magnify("myimage", 3); </script> -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <br><br><br>
+            <h1 class="title is-1 publication-title">CosmicMan: A Text-to-Image Foundation Model for Humans</h1>
+            <h4 class="title is-4 publication-title" style="color:#5a6268;"> CVPR 2024 <span style="color: red;">(Highlight)</span></h4>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="mailto:lishikai@pjlab.org.cn" target="_blank">Shikai Li</a>*, </span>  
+                <!-- <sup>1</sup> -->
+              <span class="author-block">
+                <a href="mailto:arlenefu@outlook.com" target="_blank">Jianglin Fu</a>*, </span>
+              <span class="author-block">
+                <a href="mailto:1154864382@mail.dlut.edu.cn" target="_blank">Kaiyuan Liu</a>*, </span>
+              <span class="author-block">
+                <a href="mailto:wangwentao@pjlab.org.cn" target="_blank">Wentao Wang</a>*, </span>
+              <span class="author-block">
+                <a href="https://kwanyeelin.github.io/" target="_blank">Kwan-Yee Lin</a><sup>&#8224</sup>, </span>
+              <span class="author-block">
+                <a href="https://wywu.github.io/" target="_blank">Wayne Wu</a><sup>&#8224</sup> </span>
+                <!-- <sup>1&#8224</sup> -->
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Shanghai AI Laboratory    </span>
+              <!-- <sup>1</sup> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+               
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2404.01294" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Arxiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/cosmicman/CosmicManHQ-1.0" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa-solid fa-database"></i>
+                    </span>
+                    <span>Data </span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=CsZKA27tQDA" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/cosmicman-cvpr2024/CosmicMan" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                  </a>
+                </span>
+                <!-- photo gallery. -->
+<!--                 <span class="link-block">
+                  <a href="" target="_blank" onclick="event.preventDefault();" 
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa-solid fa-image"></i>
+                    </span>
+                    <span>Photo Gallery (Coming Soon)</span>
+                  </a>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br>
+  <!-- Teaser Picture -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+          <img class="cover" src="./static/imgs/teaser.png" style="width:1000px; margin-bottom:20px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            We present <strong>CosmicMan</strong>, a text-to-image foundation model specialized for generating high-fidelity human images. 
+            Unlike current general-purpose foundation models that are stuck in the dilemma of inferior quality and text-image misalignment for humans, 
+            CosmicMan enables generating photo-realistic human images with meticulous appearance, reasonable structure, 
+            and precise text-image alignment with detailed dense descriptions.
+
+            At the heart of CosmicMan's success are the new reflections and perspectives on data and model:
+              (1) We found that data quality and a scalable data production flow are essential for the final results from trained models. 
+              Hence, we propose a new data production paradigm, <strong>Annotate Anyone</strong>, which serves as a perpetual data flywheel to produce high-quality data with accurate yet 
+              cost-effective annotations over time. Based on this, we constructed a large-scale dataset <strong>CosmicMan-HQ 1.0</strong>, 
+              with 6 Million high-quality real-world human images in a mean resolution of 1488x1255, 
+              and attached with precise text annotations deriving from 115 Million attributes in diverse granularities.
+              (2) We argue that a text-to-image foundation model specialized for humans must be pragmatic - easy to integrate into down-streaming tasks while effective 
+              in producing high-quality human images. Hence, we propose to model the relationship between dense text descriptions and image pixels in 
+              a decomposed manner, and present <strong>D</strong>ecomposed-<strong>A</strong>ttention-<strong>R</strong>efocus<strong>ing</strong> (<strong>Daring</strong>) training framework.
+              It seamlessly decomposes the cross-attention features in existing text-to-image diffusion model, and enforces attention refocusing without adding extra modules. 
+              Through Daring, we show that explicitly discretizing continuous text space into several basic groups that align with human body structure is the key to tackling the misalignment problem in a breeze.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--/ Abstract. -->
+  
+  <!-- Paper video. -->
+  <section>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <h2 class="title is-3">Overview Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/CsZKA27tQDA?autoplay=0" frameborder="10"
+            allow="autoplay; encrypted-media" width="50%" allowfullscreen></iframe>
+        </div> 
+        <!-- https://www.youtube.com/embed/nIrb9hwsdcI?autoplay=0 -->
+      </div>
+    </div>
+  </section>
+  <!-- / Paper video.   -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data pipeline - Annotate Anyone</h2>
+        <div class="content has-text-justified">
+          <img src="./static/imgs/data_pipeline.png"  style="width:80%; display: block; margin: 0 auto;">
+          <p>
+            There are two representative data production paradigms: (a) data production by humans and (b) data production by AI. 
+            (c) Our proposed new data production paradigm by Human-AI cooperation, named Annotate Anyone. 
+            It serves as a <strong>data flywheel</strong> to produce dynamic up-to-date high-quality data at a low cost.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data - CosmicMan-HQ 1.0</h2>
+        <div class="content has-text-justified">
+          <img src="./static/imgs/dataset_stat_table.png" alt="Image 1">
+          <p>
+            The dataset CosmicMan-HQ 1.0, with 6 Million high-quality real-world human images, will be released soon.
+            The statistical comparison between publicly available human-related datasets and CosmicMan-HQ 1.0.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"><strong>Daring</strong> - <strong>D</strong>ecomposed-<strong>A</strong>ttention-<strong>R</strong>efocus<strong>ing</strong> </h2>
+        <div class="content has-text-justified">
+            <img src="./static/imgs/daring.png" alt="Image 1" style="width:80%; display: block; margin: 0 auto;">
+          <p>
+            Here we presend the core element of our network. The proposed training framework includes two parts: 
+            (1) data discretion for decomposing text-human data into fixed groups that obey human structure; 
+            (2) a new loss, called HOLA, to enforce the cross-attention features actively response in the proper spatial region with respect 
+            to the scale of body structure and outfit arrangement.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+<!-- Results. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Foundation Models - Compare with SOTAs</h2>
+        
+        <h2 class="title is-5">Quantitative Results</h2>
+        <div class="content has-text-justified">
+            <img src="./static/imgs/quantitative_comp.png" alt="Image 1">
+          <p>
+          </p>
+        </div>
+
+        <h2 class="title is-5">Qualitative Results</h2>
+        <div class="content has-text-justified">
+            <img src="./static/imgs/qualitative_comp.png" alt="Image 1">
+            <img src="./static/imgs/qualitative_comp2.png" alt="Image 1">
+          <p>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+
+
+
+<!-- Supp Visualization. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More Generated Results</h2>
+        <div class="content has-text-justified">
+          <div class="image-group">
+            <img src="./static/imgs/supp_vis/cat1.png" alt="Image 1" style="width:60%;">
+            <img src="./static/imgs/supp_vis/cat2.png" alt="Image 2" style="width:60%;">
+         </div>
+         <div class="image-group">
+          <img src="./static/imgs/supp_vis/cat3.png" alt="Image 3" style="width:60%;">
+          <img src="./static/imgs/supp_vis/cat4.png" alt="Image 4" style="width:60%;">
+        </div>
+         <div class="image-group">
+          <img src="./static/imgs/supp_vis/cat5.png" alt="Image 5" style="width:60%;">
+          <img src="./static/imgs/supp_vis/cat6.png" alt="Image 6" style="width:60%;">
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Results. -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column" style="width: 83.333333%;">
+        <h2 class="title is-3">Potential Downstream Applications</h2>
+        
+        <h2 class="title is-5">Gen-2 video produced by CosmicMan and Art Designers</h2>
+        <div class="content has-text-justified">
+            
+        
+            <div class="hero-body " padding=-10rem>
+              <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                  <div class="item">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/134_0_V.mp4" type="video/mp4">
+                    </video>
+                    <br><br><br>
+                    <div class="text-small" style="margin-top: 10px;">A close up portrait shot of a Caucasian woman, wavy above chest blonde hair, short sleeve white silk floral dress.<br><br> </div>
+                  </div>
+                  <div class="item  ">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/166_0_V.mp4" type="video/mp4">
+                    </video>
+                    <br><br><br><br>
+                    <div class="text-small" style="margin-top: 10px;">A headshot, an Asian adult female, a white wall, wavy brown above chest hair. <br><br><br></div>
+                  </div>
+                  <div class="item">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/698_0_V.mp4" type="video/mp4">
+                    </video>
+                    <br><br><br>
+                    <div class="text-small"  style="margin-top: 10px;">A headshot, an adult Asian female, fit, a blurry image of a woman's face, floral mesh graphic black normal short sleeve shirt, wavy brown above chest hair.</div>
+                  </div>
+                  <div class="item ">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/754_1_V.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <div class="text-small"  style="margin-top: 10px;">A headshot, an adult Latino male, fit, a black background, above eyes black hair, normal black cotton solid color short sleeve t-shirt.<br><br>
+                    </div>
+                  </div>
+                  <div class="item ">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/811_0_V.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <div class="text-small"  style="margin-top: 10px;">A headshot, an adult Caucasian female, fit, a gray wall, black normal solid color cotton long sleeve sweaters, above shoulders straight gray hair.
+                    </div>
+                  </div>
+                  <div class="item ">
+                    <video id="replay-video" controls muted preload autoplay loop width="100%">
+                      <source src="./static/videos/829_0_V.mp4" type="video/mp4">
+                    </video>
+                    <br>
+                    <div class="text-small" style="margin-top: 10px;">A headshot, an adult Caucasian female, fit, a gray wall, black normal solid color cotton long sleeve sweaters, above shoulders straight gray hair.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Related Work </h2>
+        <div class="content has-text-justified is-centered">
+          <ul>
+            <li>[ECCV 2022] <a href="https://stylegan-human.github.io/"  target="_blank" >StyleGAN-Human: A Data-Centric Odyssey of Human Generation</a>, (Jianglin Fu et al.) </li>
+            </ul>
+          <!-- <p style=" text-align: center;">Click <a href=""  target="_blank" onclick="event.preventDefault();">here</a> to see more images generated by our foundation models.</p> -->
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Acknowledgements </h2>
+        <div class="content has-text-justified is-centered">
+         <p>Special thanks to Rongzhang Gu for helping creating demo videos and Yi Zhang for her project management. </p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+
+<section class="section" id="Citaton">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code> @article{li2024cosmicman,
+      title={CosmicMan: A Text-to-Image Foundation Model for Humans}, 
+      author={Li, Shikai and Fu, Jianglin and Liu, Kaiyuan and Wang, Wentao and Lin, Kwan-Yee and Wu, Wayne},
+      year={2024},
+      journal   = {arXiv preprint},
+      volume    = {arXiv:2404.01294}}
+    </code></pre>
+  </div>
+</section>
+
+  <script>
+    $(window).on('load', function () {
+      $('#loading').hide();
+    })
+  </script>
+</body>
+
+</html>
